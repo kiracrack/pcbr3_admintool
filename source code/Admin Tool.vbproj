@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24C1C454-A413-4F9B-8B01-C94B3BEA7C1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>AdminTool.My.MyApplication</StartupObject>
+    <RootNamespace>AdminTool</RootNamespace>
+    <AssemblyName>AdminTool</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AdminTool.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AdminTool.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.0.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminTools\frmRemoveGTicket.Designer.vb">
+      <DependentUpon>frmRemoveGTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmRemoveGTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmCorrectClientCenter.Designer.vb">
+      <DependentUpon>frmCorrectClientCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmCorrectClientCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmPaymentMissingCorrect.Designer.vb">
+      <DependentUpon>frmPaymentMissingCorrect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmPaymentMissingCorrect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmResetPassword.Designer.vb">
+      <DependentUpon>frmResetPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmResetPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmProductImporter.Designer.vb">
+      <DependentUpon>frmProductImporter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmProductImporter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmFindString.Designer.vb">
+      <DependentUpon>frmFindString.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmFindString.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmNewAccount.Designer.vb">
+      <DependentUpon>frmNewAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmNewAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmConfirmedBeginingofDay.Designer.vb">
+      <DependentUpon>frmConfirmedBeginingofDay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmConfirmedBeginingofDay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmCancelUndisbursedLoans.Designer.vb">
+      <DependentUpon>frmCancelUndisbursedLoans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmCancelUndisbursedLoans.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmChangeBranch.Designer.vb">
+      <DependentUpon>frmChangeBranch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmChangeBranch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmUserAccessTemplate.Designer.vb">
+      <DependentUpon>frmUserAccessTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmUserAccessTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmChangeUserAccess.Designer.vb">
+      <DependentUpon>frmChangeUserAccess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmChangeUserAccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralAutoBackup.Designer.vb">
+      <DependentUpon>frmCentralAutoBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralAutoBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportTemplate.Designer.vb">
+      <DependentUpon>frmCentralReportTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralExecuteBackup.Designer.vb">
+      <DependentUpon>frmCentralExecuteBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralExecuteBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralConnectionSetup.Designer.vb">
+      <DependentUpon>frmCentralConnectionSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralConnectionSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportDate.Designer.vb">
+      <DependentUpon>frmCentralReportDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportGenerator.Designer.vb">
+      <DependentUpon>frmCentralReportGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportConnection.Designer.vb">
+      <DependentUpon>frmCentralReportConnection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentralReportConnection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Central Report\frmCentraReportDeveloper.Designer.vb">
+      <DependentUpon>frmCentraReportDeveloper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Central Report\frmCentraReportDeveloper.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSingleMenu.Designer.vb">
+      <DependentUpon>frmSingleMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSingleMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirReader.Designer.vb">
+      <DependentUpon>DirReader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DirReader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DormancySavings\frmDormantSettings.Designer.vb">
+      <DependentUpon>frmDormantSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DormancySavings\frmDormantSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DormancySavings\frmDormantList.Designer.vb">
+      <DependentUpon>frmDormantList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DormancySavings\frmDormantList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="For Approval\frmUserAccessForApproval.Designer.vb">
+      <DependentUpon>frmUserAccessForApproval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="For Approval\frmUserAccessForApproval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBranchConnectionSetup.Designer.vb">
+      <DependentUpon>frmBranchConnectionSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBranchConnectionSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenApp Live\frmUserAccessUpdate.Designer.vb">
+      <DependentUpon>frmUserAccessUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenApp Live\frmUserAccessUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenApp Live\frmITicketUpdate.Designer.vb">
+      <DependentUpon>frmITicketUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenApp Live\frmITicketUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenApp Live\frmGenAppLive.Designer.vb">
+      <DependentUpon>frmGenAppLive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenApp Live\frmGenAppLive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IP-Inventory\frmIPPingMonitoring.Designer.vb">
+      <DependentUpon>frmIPPingMonitoring.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IP-Inventory\frmIPPingMonitoring.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IP-Inventory\frmNetworkIPInventory.Designer.vb">
+      <DependentUpon>frmNetworkIPInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IP-Inventory\frmNetworkIPInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IP-Inventory\frmAddNetworksIP.Designer.vb">
+      <DependentUpon>frmAddNetworksIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IP-Inventory\frmAddNetworksIP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IP-Inventory\frmAddNewIP.Designer.vb">
+      <DependentUpon>frmAddNewIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IP-Inventory\frmAddNewIP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IP-Inventory\frmIPInventory.Designer.vb">
+      <DependentUpon>frmIPInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IP-Inventory\frmIPInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MBO\frmMBOChangeCenter.Designer.vb">
+      <DependentUpon>frmMBOChangeCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MBO\frmMBOChangeCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MBO\frmMBOSavingFIlter.Designer.vb">
+      <DependentUpon>frmMBOSavingFIlter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MBO\frmMBOSavingFIlter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MBO\frmMBOTagging.Designer.vb">
+      <DependentUpon>frmMBOTagging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MBO\frmMBOTagging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MBO\frmMBOSetup.Designer.vb">
+      <DependentUpon>frmMBOSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MBO\frmMBOSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MBO\frmClientIdentifier.Designer.vb">
+      <DependentUpon>frmClientIdentifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MBO\frmClientIdentifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\Connection.vb" />
+    <Compile Include="Module\DataGridViewPrinter.vb" />
+    <Compile Include="AdminTools\frmProductDuplicater.Designer.vb">
+      <DependentUpon>frmProductDuplicater.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmProductDuplicater.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanProfile.Designer.vb">
+      <DependentUpon>frmLoanProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmClientLoanProfile.Designer.vb">
+      <DependentUpon>frmClientLoanProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmClientLoanProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalHistory.Designer.vb">
+      <DependentUpon>frmTechnicalHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmCenterRetriever.Designer.vb">
+      <DependentUpon>frmCenterRetriever.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmCenterRetriever.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmAmortSchedRetriver.Designer.vb">
+      <DependentUpon>frmAmortSchedRetriver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmAmortSchedRetriver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmChangePassword.Designer.vb">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmBlockUser.Designer.vb">
+      <DependentUpon>frmBlockUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmBlockUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmUserAccounts.Designer.vb">
+      <DependentUpon>frmUserAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmUserAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalPerformance.Designer.vb">
+      <DependentUpon>frmTechnicalPerformance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalPerformance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmExtendIssue.Designer.vb">
+      <DependentUpon>frmExtendIssue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmExtendIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmResolveIssue.Designer.vb">
+      <DependentUpon>frmResolveIssue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmResolveIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmLoginAccount.Designer.vb">
+      <DependentUpon>frmLoginAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmLoginAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmITServiceLoggingTool.Designer.vb">
+      <DependentUpon>frmITServiceLoggingTool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmITServiceLoggingTool.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingSavings.Designer.vb">
+      <DependentUpon>frmClearingSavings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingSavings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingClient.Designer.vb">
+      <DependentUpon>frmClearingClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingLoan.Designer.vb">
+      <DependentUpon>frmClearingLoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmClearingLoan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanReleasedCancellation.Designer.vb">
+      <DependentUpon>frmLoanReleasedCancellation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanReleasedCancellation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmFullPaymentCencellation.Designer.vb">
+      <DependentUpon>frmFullPaymentCencellation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmFullPaymentCencellation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmConnectionSetup.Designer.vb">
+      <DependentUpon>frmConnectionSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmConnectionSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmPopUnlocker.Designer.vb">
+      <DependentUpon>frmPopUnlocker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmPopUnlocker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmDepTrnRemover.Designer.vb">
+      <DependentUpon>frmDepTrnRemover.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmDepTrnRemover.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmChargesDeposit.Designer.vb">
+      <DependentUpon>frmChargesDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmChargesDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalReport.Designer.vb">
+      <DependentUpon>frmTechnicalReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmTechnicalReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmClearLog.Designer.vb">
+      <DependentUpon>frmClearLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmClearLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanAdjustment.Designer.vb">
+      <DependentUpon>frmLoanAdjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTools\frmLoanAdjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.vb">
+      <DependentUpon>frmMainMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Other Tool\frmPCBRImageExporter.Designer.vb">
+      <DependentUpon>frmPCBRImageExporter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other Tool\frmPCBRImageExporter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other Tool\frmCaptureLoanPaymentSequence.Designer.vb">
+      <DependentUpon>frmCaptureLoanPaymentSequence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other Tool\frmCaptureLoanPaymentSequence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other Tool\frmRSBACapture.Designer.vb">
+      <DependentUpon>frmRSBACapture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Other Tool\frmRSBACapture.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTReportTransaction.Designer.vb">
+      <DependentUpon>frmPLDTReportTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTReportTransaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTNewReport.Designer.vb">
+      <DependentUpon>frmPLDTNewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTNewReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTnewOffice.Designer.vb">
+      <DependentUpon>frmPLDTnewOffice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTnewOffice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTOffices.Designer.vb">
+      <DependentUpon>frmPLDTOffices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PLDT\frmPLDTOffices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminTools\frmRemoveGTicket.resx">
+      <DependentUpon>frmRemoveGTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmCorrectClientCenter.resx">
+      <DependentUpon>frmCorrectClientCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmPaymentMissingCorrect.resx">
+      <DependentUpon>frmPaymentMissingCorrect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmResetPassword.resx">
+      <DependentUpon>frmResetPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmProductImporter.resx">
+      <DependentUpon>frmProductImporter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmFindString.resx">
+      <DependentUpon>frmFindString.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmNewAccount.resx">
+      <DependentUpon>frmNewAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmConfirmedBeginingofDay.resx">
+      <DependentUpon>frmConfirmedBeginingofDay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmCancelUndisbursedLoans.resx">
+      <DependentUpon>frmCancelUndisbursedLoans.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmChangeBranch.resx">
+      <DependentUpon>frmChangeBranch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmUserAccessTemplate.resx">
+      <DependentUpon>frmUserAccessTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmChangeUserAccess.resx">
+      <DependentUpon>frmChangeUserAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralAutoBackup.resx">
+      <DependentUpon>frmCentralAutoBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralReportTemplate.resx">
+      <DependentUpon>frmCentralReportTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralExecuteBackup.resx">
+      <DependentUpon>frmCentralExecuteBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralConnectionSetup.resx">
+      <DependentUpon>frmCentralConnectionSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralReportDate.resx">
+      <DependentUpon>frmCentralReportDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralReportGenerator.resx">
+      <DependentUpon>frmCentralReportGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentralReportConnection.resx">
+      <DependentUpon>frmCentralReportConnection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Central Report\frmCentraReportDeveloper.resx">
+      <DependentUpon>frmCentraReportDeveloper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSingleMenu.resx">
+      <DependentUpon>frmSingleMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirReader.resx">
+      <DependentUpon>DirReader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmProductDuplicater.resx">
+      <DependentUpon>frmProductDuplicater.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmLoanProfile.resx">
+      <DependentUpon>frmLoanProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmClientLoanProfile.resx">
+      <DependentUpon>frmClientLoanProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmTechnicalHistory.resx">
+      <DependentUpon>frmTechnicalHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmCenterRetriever.resx">
+      <DependentUpon>frmCenterRetriever.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmAmortSchedRetriver.resx">
+      <DependentUpon>frmAmortSchedRetriver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmBlockUser.resx">
+      <DependentUpon>frmBlockUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmUserAccounts.resx">
+      <DependentUpon>frmUserAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmTechnicalPerformance.resx">
+      <DependentUpon>frmTechnicalPerformance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmExtendIssue.resx">
+      <DependentUpon>frmExtendIssue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmResolveIssue.resx">
+      <DependentUpon>frmResolveIssue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmLoginAccount.resx">
+      <DependentUpon>frmLoginAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmITServiceLoggingTool.resx">
+      <DependentUpon>frmITServiceLoggingTool.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmClearingSavings.resx">
+      <DependentUpon>frmClearingSavings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmClearingClient.resx">
+      <DependentUpon>frmClearingClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmClearingLoan.resx">
+      <DependentUpon>frmClearingLoan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmLoanReleasedCancellation.resx">
+      <DependentUpon>frmLoanReleasedCancellation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmFullPaymentCencellation.resx">
+      <DependentUpon>frmFullPaymentCencellation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmConnectionSetup.resx">
+      <DependentUpon>frmConnectionSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmPopUnlocker.resx">
+      <DependentUpon>frmPopUnlocker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmDepTrnRemover.resx">
+      <DependentUpon>frmDepTrnRemover.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmChargesDeposit.resx">
+      <DependentUpon>frmChargesDeposit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmTechnicalReport.resx">
+      <DependentUpon>frmTechnicalReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmClearLog.resx">
+      <DependentUpon>frmClearLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTools\frmLoanAdjustment.resx">
+      <DependentUpon>frmLoanAdjustment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DormancySavings\frmDormantSettings.resx">
+      <DependentUpon>frmDormantSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DormancySavings\frmDormantList.resx">
+      <DependentUpon>frmDormantList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="For Approval\frmUserAccessForApproval.resx">
+      <DependentUpon>frmUserAccessForApproval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBranchConnectionSetup.resx">
+      <DependentUpon>frmBranchConnectionSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenApp Live\frmUserAccessUpdate.resx">
+      <DependentUpon>frmUserAccessUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenApp Live\frmITicketUpdate.resx">
+      <DependentUpon>frmITicketUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenApp Live\frmGenAppLive.resx">
+      <DependentUpon>frmGenAppLive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IP-Inventory\frmIPPingMonitoring.resx">
+      <DependentUpon>frmIPPingMonitoring.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IP-Inventory\frmNetworkIPInventory.resx">
+      <DependentUpon>frmNetworkIPInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IP-Inventory\frmAddNetworksIP.resx">
+      <DependentUpon>frmAddNetworksIP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IP-Inventory\frmAddNewIP.resx">
+      <DependentUpon>frmAddNewIP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IP-Inventory\frmIPInventory.resx">
+      <DependentUpon>frmIPInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MBO\frmMBOChangeCenter.resx">
+      <DependentUpon>frmMBOChangeCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MBO\frmMBOSavingFIlter.resx">
+      <DependentUpon>frmMBOSavingFIlter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MBO\frmMBOTagging.resx">
+      <DependentUpon>frmMBOTagging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MBO\frmMBOSetup.resx">
+      <DependentUpon>frmMBOSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MBO\frmClientIdentifier.resx">
+      <DependentUpon>frmClientIdentifier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other Tool\frmPCBRImageExporter.resx">
+      <DependentUpon>frmPCBRImageExporter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other Tool\frmCaptureLoanPaymentSequence.resx">
+      <DependentUpon>frmCaptureLoanPaymentSequence.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other Tool\frmRSBACapture.resx">
+      <DependentUpon>frmRSBACapture.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLDT\frmPLDTReportTransaction.resx">
+      <DependentUpon>frmPLDTReportTransaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLDT\frmPLDTNewReport.resx">
+      <DependentUpon>frmPLDTNewReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLDT\frmPLDTnewOffice.resx">
+      <DependentUpon>frmPLDTnewOffice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLDT\frmPLDTOffices.resx">
+      <DependentUpon>frmPLDTOffices.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Time Hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock--exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\065.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook--pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-excel-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueprint--arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-document-export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation-red-frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer--pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminal-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer--arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building--arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building--plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building--pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building--exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OfficeUtility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-continue-090-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user--exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Program Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user--arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook--backarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\063.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer--arrow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ico.ico" />
+    <None Include="Resources\notebook--arrow.png" />
+    <None Include="Resources\newspaper.png" />
+    <None Include="Resources\notebooks.png" />
+    <None Include="Resources\search %284%29.png" />
+    <None Include="Resources\Network Service.png" />
+    <None Include="Resources\building--arrow1.png" />
+    <None Include="Resources\building--minus.png" />
+    <None Include="Resources\office-building.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
